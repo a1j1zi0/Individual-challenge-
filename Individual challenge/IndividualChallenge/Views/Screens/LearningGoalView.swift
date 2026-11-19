@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct LearningGoalView: View {
-    @EnvironmentObject private var activity: ActivityViewModel
-    // الـ ViewModel يجي جاهز من شاشة Activity (هي اللي تملكه)، عشان ما يتصفّر لو انعادت بناء الشاشة
-    @ObservedObject var viewModel: LearningGoalViewModel
+    @Environment(ActivityViewModel.self) private var activity
+    // الـ ViewModel يجي جاهز من شاشة Activity (هي اللي تملكه)، عشان ما يتصفّر لو انعادت بناء الشاشة.
+    // @Bindable عشان نقدر نربط الحقول فيه ($viewModel.topic)
+    @Bindable var viewModel: LearningGoalViewModel
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {

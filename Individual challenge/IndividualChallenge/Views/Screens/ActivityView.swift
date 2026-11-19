@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ActivityView: View {
-    @EnvironmentObject private var viewModel: ActivityViewModel
+    @Environment(ActivityViewModel.self) private var viewModel
     @State private var showGoalEditor = false
     // Bug fix: الـ ViewModel حق شاشة الهدف صار ينحفظ هنا بدل ما ينخلق داخل الشاشة نفسها.
     // قبل كان SwiftUI يعيد بناء الشاشة أول مرة يطلع التنبيه، فينخلق ViewModel جديد
@@ -43,11 +43,13 @@ struct ActivityView: View {
                 } label: {
                     Image(systemName: "calendar")
                 }
+                .accessibilityLabel("Calendar")
                 Button {
                     openGoalEditor()
                 } label: {
                     Image(systemName: "target")
                 }
+                .accessibilityLabel("Learning goal")
             }
         }
         // أيقونات التولبار بيضاء مثل التصميم (عشان ما تاخذ لون الـ AccentColor البرتقالي)
@@ -64,9 +66,10 @@ struct ActivityView: View {
         switch viewModel.goalState {
         case .active:
             VStack(spacing: 24) {
-                LogButton(isLogged: viewModel.isLearnedToday) { viewModel.logLearned() }
-                    // الدائرة تتعطّل إذا الساعة متغيّرة يدوياً
-                    .disabled(!viewModel.isClockValid)
+                // الدائرة تتعطّل إذا اليوم مسجّل (Learned أو Freeze) أو الساعة متغيّرة يدوياً
+                LogButton(isLogged: viewModel.isLearnedToday, isEnabled: viewModel.canLog) {
+                    viewModel.logLearned()
+                }
                 VStack(spacing: 8) {
                     FreezeButton(title: viewModel.freezeTitle, isEnabled: viewModel.canFreeze) {
                         viewModel.freezeToday()

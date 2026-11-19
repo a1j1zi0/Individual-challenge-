@@ -1,0 +1,118 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld out of %lld Freezes used" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld out of %2$lld Freezes used"
+          }
+        }
+      }
+    },
+    "Activities" : {
+
+    },
+    "Activity" : {
+
+    },
+    "Calendar" : {
+
+    },
+    "Dismiss" : {
+
+    },
+    "e.g. Coding, Arabic, Drawing" : {
+
+    },
+    "Freeze for a day" : {
+
+    },
+    "Freezed" : {
+
+    },
+    "Freezed for a day" : {
+
+    },
+    "Hello %@" : {
+
+    },
+    "I want to learn" : {
+
+    },
+    "I want to learn it in a" : {
+
+    },
+    "If you update now, your streak will start over." : {
+
+    },
+    "Learned" : {
+
+    },
+    "Learner" : {
+
+    },
+    "Learning goal" : {
+
+    },
+    "Learning Goal" : {
+
+    },
+    "Log as Learned" : {
+
+    },
+    "Logged as Learned" : {
+
+    },
+    "Month" : {
+
+    },
+    "Ready for your next goal?" : {
+
+    },
+    "Save" : {
+
+    },
+    "Set a goal" : {
+
+    },
+    "Start Learning" : {
+
+    },
+    "This app will help you learn everyday!" : {
+
+    },
+    "Today" : {
+
+    },
+    "Update" : {
+
+    },
+    "Update goal" : {
+
+    },
+    "Want to set another goal?" : {
+
+    },
+    "Week" : {
+
+    },
+    "Well done!" : {
+
+    },
+    "Year" : {
+
+    },
+    "You can edit your desire later" : {
+
+    },
+    "You didn't reach your goal this time." : {
+
+    },
+    "Your device time was changed. Set it to automatic to keep logging." : {
+
+    }
+  },
+  "version" : "1.0"
+}

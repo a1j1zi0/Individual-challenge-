@@ -10,6 +10,7 @@ struct WeekStripView: View {
                     Text(day.letter)
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(.secondary)
+                        .accessibilityHidden(true)   // التاريخ كامل موجود في DayCell
                     DayCell(day: day)
                 }
                 .frame(maxWidth: .infinity)

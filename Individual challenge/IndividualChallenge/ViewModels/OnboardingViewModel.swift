@@ -1,18 +1,21 @@
-import SwiftUI
-import Combine
+import Foundation
+import Observation
 
-final class OnboardingViewModel: ObservableObject {
-    @Published var topic = ""
-    @Published var duration: GoalDuration = .week
+/// ViewModel شاشة الـ Onboarding (أول هدف)
+@Observable
+final class OnboardingViewModel {
+    var topic = ""
+    var duration: GoalDuration = .week
 
     private var cleanTopic: String {
-        topic.trimmingCharacters(in: .whitespaces)
+        topic.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
+    /// الموضوع نص حر بأي لغة، والشرط الوحيد إنه ما يكون فاضي
     var canStart: Bool { !cleanTopic.isEmpty }
 
-    func makeGoal() -> LearningGoal? {
+    func makeGoal(now: Date = Date()) -> LearningGoal? {
         guard canStart else { return nil }
-        return LearningGoal(topic: cleanTopic, duration: duration, startDate: Date())
+        return LearningGoal(topic: cleanTopic, duration: duration, startDate: now)
     }
 }

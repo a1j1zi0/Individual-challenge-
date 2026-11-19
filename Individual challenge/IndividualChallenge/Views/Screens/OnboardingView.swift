@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @EnvironmentObject private var activity: ActivityViewModel
-    @StateObject private var viewModel = OnboardingViewModel()
+    @Environment(ActivityViewModel.self) private var activity
+    @State private var viewModel = OnboardingViewModel()
 
     var body: some View {
         // spacing: 0 بدل مسافة موحّدة، عشان كل عنصر ياخذ مسافته الخاصة (المسافات في التصميم مو متساوية)

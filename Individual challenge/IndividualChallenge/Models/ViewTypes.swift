@@ -10,6 +10,9 @@ struct DayItem: Identifiable {
     let letter: String
     let status: DayStatus?
     let isToday: Bool
+    /// النص اللي يقرأه VoiceOver، مثل "Thursday, 19 November 2026, Learned, Today"
+    /// عشان حالة اليوم ما تكون معروفة باللون بس
+    let accessibilityLabel: String
     var id: Date { date }
 }
 

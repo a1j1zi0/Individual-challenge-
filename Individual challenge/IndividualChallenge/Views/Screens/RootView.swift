@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @EnvironmentObject private var viewModel: ActivityViewModel
+    @Environment(ActivityViewModel.self) private var viewModel
 
     var body: some View {
         NavigationStack {

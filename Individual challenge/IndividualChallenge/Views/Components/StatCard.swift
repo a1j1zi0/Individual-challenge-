@@ -4,11 +4,13 @@ struct StatCard: View {
     let icon: String
     let color: Color
     let count: Int
-    let label: String
+    let label: LocalizedStringResource
 
     var body: some View {
         VStack(spacing: 4) {
-            Image(systemName: icon).foregroundStyle(color)
+            Image(systemName: icon)
+                .foregroundStyle(color)
+                .accessibilityHidden(true)             // الأيقونة زينة، النص يكفي
             Text(count.dayText)
                 .font(.subheadline.weight(.semibold))  // أصغر من .headline مثل التصميم
             Text(label)
@@ -19,5 +21,7 @@ struct StatCard: View {
         .padding(.vertical, 16)
         // Liquid Glass: كارد زجاجي بزوايا دائرية
         .glassEffect(.regular, in: .rect(cornerRadius: 20))
+        // VoiceOver يقرأ الكارد جملة وحدة: "3 Days, Learned"
+        .accessibilityElement(children: .combine)
     }
 }

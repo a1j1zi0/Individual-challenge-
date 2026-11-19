@@ -3,7 +3,14 @@ import Foundation
 enum GoalDuration: String, Codable, CaseIterable {
     case week, month, year
 
-    var title: String { rawValue.capitalized }
+    /// LocalizedStringResource عشان Week / Month / Year تنضاف للـ String Catalog وتنترجم
+    var title: LocalizedStringResource {
+        switch self {
+        case .week: return "Week"
+        case .month: return "Month"
+        case .year: return "Year"
+        }
+    }
 
     var maxFreezes: Int {
         switch self {
