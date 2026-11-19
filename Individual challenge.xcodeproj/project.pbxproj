@@ -11,9 +11,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C46B4CC830A3347D004CE86F /*   */ = {
+		C46B4CC830A3347D004CE86F /* Individual challenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = " ";
+			path = "Individual challenge";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,7 +30,7 @@
 		C46B4CBD30A3347D004CE86F = {
 			isa = PBXGroup;
 			children = (
-				C46B4CC830A3347D004CE86F /*   */,
+				C46B4CC830A3347D004CE86F /* Individual challenge */,
 				C46B4CC730A3347D004CE86F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			buildRules = (
 			);
 			fileSystemSynchronizedGroups = (
-				C46B4CC830A3347D004CE86F /*   */,
+				C46B4CC830A3347D004CE86F /* Individual challenge */,
 			);
 			name = "Individual challenge";
 			productName = "Individual challenge";
